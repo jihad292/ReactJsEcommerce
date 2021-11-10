@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { AddProducts } from './components/AddProducts';
 import { Home } from './components/Home';
 import { ProductsContextProvider } from './global/ProductsContext';
 import { Login } from './components/Login';
 import { Signup } from './components/Signup';
 import { auth,db } from './config/Config'; 
+import { Images } from './components/Images';  
+import { CartContextProvider } from './global/CartContext';
+import { Cart } from './components/Cart';
 
 export class App extends Component {
 
@@ -36,20 +38,22 @@ componentDidMount() {
   render() {
     return (
      <ProductsContextProvider>
-      <BrowserRouter>
+      <CartContextProvider>
+       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={()=><Home user={this.state.user} />} />
-          <Route exact path='/addproducts'>
-            <AddProducts />
-          </Route>
+         <Route exact path="/" component={()=><Home user={this.state.user} />} />
           <Route path='/login'>
             <Login />
           </Route>
-          <Route path='/signup'>
+           <Route path='/signup'>
             <Signup />
-          </Route>
+            </Route>
+            <Route exact path='/cartproducts' component={() => <Cart user={this.state.user} />} />
+          <Route exact path='/images' component={()=><Images user={this.state.user} />} />
+          <Route exact path='*' component={()=>"404 NOT FOUND"}></Route>
         </Switch>
-      </BrowserRouter>
+       </BrowserRouter>
+      </CartContextProvider>
      </ProductsContextProvider> 
     )
   }

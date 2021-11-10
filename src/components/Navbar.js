@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../images/ecommerce.png';
+import logo from '../images/fit14Logo.JPG';
 import { Icon } from 'react-icons-kit';
 import { cart } from 'react-icons-kit/entypo/cart';
 import { useHistory } from 'react-router-dom';
 import  { auth } from '../config/Config';
+import { CartContext, CartContextProvider } from '../global/CartContext'; 
  
 export const Navbar = ({user}) => {
     const history = useHistory();
+    const { totalQty } = useContext(CartContext);
     const logout = ()=>{
         auth.signOut().then(
             ()=>{
@@ -23,15 +25,21 @@ export const Navbar = ({user}) => {
 
            {/* if user do not exist */}
            { !user && <div className='rightside'>
-               <Link to='/signup' className='navlinks'>Sign Up</Link>
-               <Link to='/login' className='navlinks'>LOGIN</Link>
+               <Link to='/' className='navlinks'><i><b>Products</b></i></Link>
+               <Link to='/images' className='navlinks'><i><b>Media</b></i></Link>
+               <Link to='/signup' className='navlinks'><i><b>SignUp</b></i></Link>
+               <Link to='/login' className='navlinks'><i><b>LOGIN</b></i></Link>
            </div>}
 
             {/* if user exist */}
             { user && <div className='rightside'>
-                <span><Link to='/' className='navlinks'>{user}</Link></span>
+                 <Link to='/images' className='navlinks'><i><b>Media</b></i></Link>
+                <span><Link to='/' className='navlinks'><i><b>{user}</b></i></Link></span>
                 <span><Link to='cartproducts'><Icon icon={cart} /></Link></span>
-                <span><button className='logout-btn' onClick={logout} >LOGOUT</button></span>
+                
+                  <span className='no-of-products'>{totalQty}</span>
+                
+                <span><button className='logout-btn' onClick={logout} ><i><b>LOGOUT</b></i></button></span>
             </div> }
 
 
