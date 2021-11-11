@@ -8,6 +8,7 @@ import { auth,db } from './config/Config';
 import { Images } from './components/Images';  
 import { CartContextProvider } from './global/CartContext';
 import { Cart } from './components/Cart';
+import { Cashout } from './components/Cashout'
 
 export class App extends Component {
 
@@ -42,14 +43,15 @@ componentDidMount() {
        <BrowserRouter>
         <Switch>
          <Route exact path="/" component={()=><Home user={this.state.user} />} />
-          <Route path='/login'>
+          <Route exact path='/login'>
             <Login />
           </Route>
-           <Route path='/signup'>
+           <Route exact path='/signup'>
             <Signup />
             </Route>
             <Route exact path='/cartproducts' component={() => <Cart user={this.state.user} />} />
           <Route exact path='/images' component={()=><Images user={this.state.user} />} />
+          <Route exact path='/cashout' component={() => <Cashout user={this.state.user} />} />
           <Route exact path='*' component={()=>"404 NOT FOUND"}></Route>
         </Switch>
        </BrowserRouter>
