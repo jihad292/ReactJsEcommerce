@@ -17,7 +17,6 @@ export const Cashout = (props) => {
     const [address, setAddress] = useState('');
     const [error, setError] = useState('');
     const [successMsg, setSuccessMsg] = useState('');
-
     useEffect(() => {
         auth.onAuthStateChanged(user => {
             if (user) {
@@ -44,7 +43,8 @@ export const Cashout = (props) => {
                     BuyerCell: cell,
                     BuyerAddress: address,
                     BuyerPayment: totalPrice,
-                    BuyerQuantity: totalQty
+                    BuyerQuantity: totalQty,
+                    Details: shoppingCart
                 }).then(() => {
                     setCell('');
                     setAddress('');
