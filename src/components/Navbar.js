@@ -33,6 +33,7 @@ export const Navbar = ({user}) => {
 
             {/* if user exist */}
             { user && <div className='rightside'>
+                 <Link to='/videos' className='navlinks'><i><b>Videos</b></i></Link>
                  <Link to='/images' className='navlinks'><i><b>Media</b></i></Link>
                 <span><Link to='/' className='navlinks'><i><b>{user}</b></i></Link></span>
                 <span><Link to='cartproducts'><Icon icon={cart} /></Link></span>
