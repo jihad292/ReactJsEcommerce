@@ -5,7 +5,7 @@ import { Icon } from 'react-icons-kit';
 import { cart } from 'react-icons-kit/entypo/cart';
 import { useHistory } from 'react-router-dom';
 import  { auth } from '../config/Config';
-import { CartContext, CartContextProvider } from '../global/CartContext'; 
+import { CartContext} from '../global/CartContext'; 
  
 export const Navbar = ({user}) => {
     const history = useHistory();

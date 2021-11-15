@@ -10,6 +10,10 @@ import { CartContextProvider } from './global/CartContext';
 import { Cart } from './components/Cart';
 import { Cashout } from './components/Cashout';
 import { Videos } from './components/Videos';
+import { VideosLegWorckout } from './components/VideosLegWorckout';
+import { VideosBackWorckout } from './components/VideosBackWorckout';
+import { VideosArmsWorckout } from './components/VideosArmsWorckout';
+import { VideosChestWorckout } from './components/VideosChestWorckout';
 
 export class App extends Component {
 
@@ -53,6 +57,10 @@ componentDidMount() {
             <Route exact path='/cartproducts' component={() => <Cart user={this.state.user} />} />
           <Route exact path='/images' component={()=><Images user={this.state.user} />} />
           <Route exact path='/videos' component={() => <Videos user={this.state.user} />} />
+          <Route exact path='/videos/LegsWorckout' component={() => <VideosLegWorckout user={this.state.user} />} />
+          <Route exact path='/videos/BackWorckout' component={() => <VideosBackWorckout user={this.state.user} />} />
+          <Route exact path='/videos/ArmsWorckout' component={() => <VideosArmsWorckout user={this.state.user} />} />
+          <Route exact path='/videos/ChestWorckout' component={() => <VideosChestWorckout user={this.state.user} />} />
           <Route exact path='/cashout' component={() => <Cashout user={this.state.user} />} />
           <Route exact path='*' component={()=>"404 NOT FOUND"}></Route>
         </Switch>
