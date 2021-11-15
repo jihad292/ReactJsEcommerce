@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { Home } from './components/Home';
+import { ProductsScreen } from './components/ProductsScreen';
 import { ProductsContextProvider } from './global/ProductsContext';
+import { Home } from './components/Home';
 import { Login } from './components/Login';
 import { Signup } from './components/Signup';
 import { auth,db } from './config/Config'; 
@@ -47,7 +48,8 @@ componentDidMount() {
       <CartContextProvider>
        <BrowserRouter>
         <Switch>
-         <Route exact path="/" component={()=><Home user={this.state.user} />} />
+        <Route exact path="/" component={()=><Home user={this.state.user} />} />
+         <Route exact path="/products" component={()=><ProductsScreen user={this.state.user} />} />
           <Route exact path='/login'>
             <Login />
           </Route>

@@ -20,12 +20,12 @@ export const Navbar = ({user}) => {
     return (
         <div className='navbox'>
            <div className='leftside'>
-               <img src={logo} alt='' />
+               <Link to='/'> <img src={logo} alt='' /> </Link>
            </div>
 
            {/* if user do not exist */}
            { !user && <div className='rightside'>
-               <Link to='/' className='navlinks'><i><b>Products</b></i></Link>
+               <Link to='/products' className='navlinks'><i><b>Products</b></i></Link>
                <Link to='/images' className='navlinks'><i><b>Media</b></i></Link>
                <Link to='/signup' className='navlinks'><i><b>SignUp</b></i></Link>
                <Link to='/login' className='navlinks'><i><b>LOGIN</b></i></Link>
@@ -35,7 +35,7 @@ export const Navbar = ({user}) => {
             { user && <div className='rightside'>
                  <Link to='/videos' className='navlinks'><i><b>Videos</b></i></Link>
                  <Link to='/images' className='navlinks'><i><b>Media</b></i></Link>
-                <span><Link to='/' className='navlinks'><i><b>{user}</b></i></Link></span>
+                <span><Link to='/products' className='navlinks'><i><b>{user}</b></i></Link></span>
                 <span><Link to='cartproducts'><Icon icon={cart} /></Link></span>
                 
                   <span className='no-of-products'>{totalQty}</span>

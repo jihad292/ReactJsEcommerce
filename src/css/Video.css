@@ -42,3 +42,14 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color:rgb(134, 129, 129);
 }
+
+.gifDiv{
+    width:100%;
+    height:auto;
+    justify-content: center;
+    display:flex;
+}
+
+.gifDiv img{
+    width:50%;
+}

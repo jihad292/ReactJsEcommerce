@@ -3,6 +3,7 @@ import  { Navbar } from './Navbar';
 import '../css/Video.css'
 import Select from 'react-select';
 import { useHistory } from 'react-router';
+import  GymGif  from '../images/wide-grip-standing-barbell-curls.gif';
 
 
 export const Videos = ({user})=>{
@@ -63,6 +64,9 @@ export const Videos = ({user})=>{
                 <p>
                     Please choose the worckout type.
                 </p>
+            </div>
+            <div className="gifDiv">
+                <img  src={GymGif} alt="GymGif" />
             </div>
             </div>
     );
