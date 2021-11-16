@@ -1,0 +1,30 @@
+.homeScreenMain {
+    background: url(../images/Capture.PNG) ;
+  background-size: cover;
+}
+.mainDiv{
+    height:100vh;
+    width: 100%;
+}
+
+.mainDiv h2{
+    color:rgb(224, 39, 39);
+    font-style: italic;
+    font-size: 45px;
+}
+
+.contactUsDiv{
+    display:flex;
+    flex-direction: column;
+}
+ .contactUsDiv p{
+    color:rgb(0, 17, 250);
+    font-size: 60px;
+}
+
+@media(max-width: 768px) {
+    .contactUsDiv p{
+        color:rgb(0, 17, 250);
+        font-size: 30px;
+    }
+} 
