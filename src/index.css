@@ -28,7 +28,8 @@ html,body{
 h1 {
   padding: 30px;
   border-bottom: 1px solid #e4e4e4;
-  background-color: rgb(190, 245, 239);
+  background-color: rgb(0, 14, 12);
+  color:darkred;
   display: flex;
   flex-direction: row;
 }

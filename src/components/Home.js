@@ -1,8 +1,29 @@
 import React from 'react';
+
+import { useEffect } from 'react';
+import { auth } from '../config/Config';
+import { useHistory } from 'react-router';
 import { Navbar } from './Navbar';
 import '../css/Home.css';
-import { FaInstagram,FaEnvelope,FaPhone } from 'react-icons/fa'
+import { FaInstagram,FaEnvelope,FaPhone } from 'react-icons/fa';
 export const Home = ({user})=>{
+
+    const history = useHistory();
+    useEffect(
+        ()=>{
+            auth.onAuthStateChanged(
+                user=>{
+                    if(!user){
+                        history.push('/login')
+                    }
+                }
+            );
+        }
+    )
+
+
+
+
     document.body.style.backgroundImage = "url('../images/Capture.PNG')";
     return(
         

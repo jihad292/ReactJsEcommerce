@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../images/fit14Logo.JPG';
+import logo from '../images/Fit Logo.jpeg';
 import { Icon } from 'react-icons-kit';
 import { cart } from 'react-icons-kit/entypo/cart';
 import { useHistory } from 'react-router-dom';

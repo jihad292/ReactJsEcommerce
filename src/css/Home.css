@@ -16,6 +16,7 @@
 .contactUsDiv{
     display:flex;
     flex-direction: column;
+    padding:15px;
 }
  .contactUsDiv p{
     color:rgb(0, 17, 250);
